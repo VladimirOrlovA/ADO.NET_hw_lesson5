@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,59 @@ namespace ADO.NET_hw_lesson5
     /// </summary>
     public partial class MainWindow : Window
     {
+        SqlConnection connection;
+        DataSet dataSet;
+        DataTable dataTable;
+
         public MainWindow()
         {
             InitializeComponent();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
+        }
+
+        private void CheckConn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreateTable_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCheckConn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCreateTable_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnViewDataRow_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnViewTableStructure_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnViewTableRecords_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnMakeTableRecords_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddColumn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

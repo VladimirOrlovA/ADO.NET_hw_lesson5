@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ADO.NET_hw_lesson5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="1000">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Options">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnCheckConn"
+                        Click="btnCheckConn_Click"
+                        Content="Check Connection"
+                        Margin="10"
+                        Padding="5 0"/>
+                <Button x:Name="btnCreateTable"
+                        Click="btnCreateTable_Click"
+                        Content="Create Table"
+                        Margin="10"
+                        Padding="5 0"/>
+                <Button x:Name="btnViewDataRow"
+                        Click="btnViewDataRow_Click"
+                        Content="View Data Row"
+                        Margin="10"
+                        Padding="5 0"/>
+                <Button x:Name="btnViewTableStructure"
+                        Click="btnViewTableStructure_Click"
+                        Content="View Table Structure"
+                        Margin="10"
+                        Padding="5 0"/>
+                <Button x:Name="btnViewTableRecords"
+                        Click="btnViewTableRecords_Click"
+                        Content="View Table Records"
+                        Margin="10"
+                        Padding="5 0"/>
+                <Button x:Name="btnMakeTableRecords"
+                        Click="btnMakeTableRecords_Click"
+                        Content="Make Table Records"
+                        Margin="10"
+                        Padding="5 0"/>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" x:Name="gbCreateTable" Header="Create Table">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Margin="10">
+                    <Label Content="Table Name: "/>
+                    <TextBox x:Name="tbTableName"
+                             Width="200"
+                             Margin="10"/>
+                    <Button x:Name="btnAddColumn"
+                        Click="btnAddColumn_Click"
+                        Content="Add Column"
+                        Margin="10"
+                            Padding="5"/>
+                </StackPanel>
+                <Separator></Separator>
+                <StackPanel x:Name="Column" Orientation="Horizontal"
+                            Margin="5">
+                    <Label Content="Key"
+                           Margin="10 5"/>
+                    <TextBox x:Name="tbKey"
+                             Width="30"
+                             Margin="10 5"/>
+                    <Label Content="Column Name"
+                           Margin="10 5"/>
+                    <TextBox x:Name="tbColumnName"
+                             Width="200"
+                             Margin="10 5"/>
+                    <Label Content="Type"
+                           Margin="10 5"/>
+                    <TextBox x:Name="tbType"
+                             Width="100"            
+                             Margin="10 5"/>
+                    <Label Content="Constraint"
+                           Margin="10 5"/>
+                    <TextBox x:Name="tbConstraint"
+                             Width="100"            
+                             Margin="10 5"/>
+                </StackPanel>
+            </StackPanel>
+            
+        </GroupBox>
         
+        <GroupBox Grid.Row="1" x:Name="gbViewTable" Header="View Table" Visibility="Hidden">
+            <DataGrid x:Name="dgTable" AutoGenerateColumns="True"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"/>
+        </GroupBox>
     </Grid> 
 </Window>
